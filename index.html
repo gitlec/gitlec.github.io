@@ -4,25 +4,19 @@
     <meta charset="UTF-8">
     <title>pc 버전</title>
 <script>
-
-function chkMobile(){
-    if(document.referrer.substring(0,25)!="http://gitlec.github.io/m"){
-    var uAgent = navigator.userAgent.toLowerCase();
-    var mobilePhones = new Array('iphone','ipod','android','blackberry','windows ce','nokia','webos','opera mini','sonyericsson','opera mobi','iemobile','lg','mot');
-
-    for(var i=0;i<mobilePhones.length;i++){
-        if(uAgent.indexOf(mobilePhones[i]) != -1){
-            document.location = "http://"+ location.host +"/m" + location.pathname;
-            }
-        }
-    }
-}
-
-var main={
-init: function(){ chkMobile(); }
-}
-
-main.init();
+<script type="text/javascript">
+var url="http://gitlec.github.io";
+var murl="http://gitlec.github.io/m";
+if(document.referrer.substring(0,url.length)!=url){
+	var mobileKeyWords = new Array('iPhone','iPod','iPad','BlackBerry','Android','Windows CE' ,'SAMSUNG','LG','MOT','SonyEricsson');
+	for (var word in mobileKeyWords){
+		if (navigator.userAgent.match(mobileKeyWords[word]) != null){
+			location.href=murl;
+			break;
+		}
+	}
+};	
+</script>
 	
 </script>
 </head>
